@@ -1,0 +1,12 @@
+---
+# tasks file for httpd
+- name: Install apache httpd
+  ansible.builtin.apt:
+    name: apache2
+    state: present
+    update_cache: yes
+- name: Enuser apache is running using service module
+  service:
+    name: apache2
+    state: started
+    enabled: yes
